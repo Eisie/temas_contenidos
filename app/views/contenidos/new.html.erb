@@ -1,0 +1,9 @@
+<h1>Nuevo Contenido</h1>
+<%= form_with scope: @item, url: contenidos_crear_path do |f| %>
+<%= f.collection_select :tema_id, Tema.all, :id, :descripcion %>
+<p>
+	<label>Nombre</label> <br>
+	<%= f.text_field :descripcion %>
+</p>
+<%= f.submit "Enviar", disable_with: 'Submiting...' %>
+<% end %>

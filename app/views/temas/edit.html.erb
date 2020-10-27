@@ -1,0 +1,9 @@
+<h1>Editar Tema</h1>
+<%= form_with scope: @item, url: temas_actualizar_path, method: :PUT do |f| %>
+ <%= f.hidden_field  :id %>   
+ <p>
+ <label>Nombre</label> <br>
+ <%= f.text_field :descripcion %>
+ </p>
+ <%= f.submit "Enviar", disable_with: 'Submiting...' %>
+<% end %>

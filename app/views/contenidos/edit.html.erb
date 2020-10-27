@@ -1,0 +1,10 @@
+<h1>Editar Contenidos</h1>
+<%= form_with scope: @item, url: contenidos_actualizar_path, method: :PUT do |f| %>
+ <%= f.hidden_field  :id %>  
+ <%= f.select(:tema_id, options_from_collection_for_select(Tema.all, :id, :descripcion)) %> 
+ <p>
+ <label>Nombre</label> <br>
+ <%= f.text_field :descripcion %>
+ </p>
+ <%= f.submit "Enviar", disable_with: 'Submiting...' %>
+<% end %>
